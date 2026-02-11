@@ -1,26 +1,169 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --font-display: var(--font-display);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-mario-red: var(--mario-red);
+  --color-mario-green: var(--mario-green);
+  --color-mario-blue: var(--mario-blue);
+  --color-mario-gold: var(--mario-gold);
+  --color-terminal-green: var(--terminal-green);
+  --color-terminal-bg: var(--terminal-bg);
+  --color-panel: var(--panel);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  --radius: 0.625rem;
+  --background: #0a0a0f;
+  --foreground: #e8e8ec;
+  --card: #1a1b24;
+  --card-foreground: #e8e8ec;
+  --popover: #1a1b24;
+  --popover-foreground: #e8e8ec;
+  --primary: #5898f8;
+  --primary-foreground: #0a0a0f;
+  --secondary: #1a1b24;
+  --secondary-foreground: #e8e8ec;
+  --muted: #12131a;
+  --muted-foreground: #9a9aaa;
+  --accent: #1a1b24;
+  --accent-foreground: #e8e8ec;
+  --destructive: #e85040;
+  --border: #2a2b36;
+  --input: #2a2b36;
+  --ring: #5898f8;
+  --chart-1: #5898f8;
+  --chart-2: #48d068;
+  --chart-3: #f8c838;
+  --chart-4: #e85040;
+  --chart-5: #f89838;
+
+  --mario-red: #e85040;
+  --mario-green: #48d068;
+  --mario-blue: #5898f8;
+  --mario-gold: #f8c838;
+  --terminal-green: #48d068;
+  --terminal-bg: #0d0e14;
+  --panel: #12131a;
+
+  --sidebar: #12131a;
+  --sidebar-foreground: #e8e8ec;
+  --sidebar-primary: #5898f8;
+  --sidebar-primary-foreground: #0a0a0f;
+  --sidebar-accent: #1a1b24;
+  --sidebar-accent-foreground: #e8e8ec;
+  --sidebar-border: #2a2b36;
+  --sidebar-ring: #5898f8;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Terminal scroll animation */
+@keyframes terminal-scroll {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+.animate-terminal-scroll {
+  animation: terminal-scroll 20s linear infinite;
+}
+
+/* Glow effects */
+.glow-green {
+  box-shadow: 0 0 10px var(--terminal-green), 0 0 20px var(--terminal-green);
+}
+
+.glow-gold {
+  box-shadow: 0 0 8px var(--mario-gold);
+}
+
+.glow-blue {
+  box-shadow: 0 0 8px var(--mario-blue);
+}
+
+/* Glass card effect */
+.glass-card {
+  background: linear-gradient(135deg, rgba(26, 27, 36, 0.8), rgba(18, 19, 26, 0.6));
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+}
+
+/* REC badge pulse */
+@keyframes pulse-rec {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.animate-pulse-rec {
+  animation: pulse-rec 1.5s ease-in-out infinite;
+}
+
+/* Scanline effect for monitor */
+.scanlines::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.03) 2px,
+    rgba(0, 0, 0, 0.03) 4px
+  );
+  pointer-events: none;
+  border-radius: inherit;
 }
