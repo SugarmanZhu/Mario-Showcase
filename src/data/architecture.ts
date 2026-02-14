@@ -76,7 +76,7 @@ export const networkHeads = {
 
 export const architectureComparison = {
   cnn: [
-    { feature: "Architecture", natureCnn: "3 Conv layers", impala: "3 stages with residual blocks" },
+    { feature: "Architecture", natureCnn: "3 Conv layers", impala: "3 stages with residual\u00a0blocks" },
     { feature: "Residual Connections", natureCnn: "None", impala: "2 per stage (6\u00a0total)" },
     { feature: "Parameters", natureCnn: "~1.5M", impala: "~8M" },
     { feature: "Multi-task Learning", natureCnn: "Limited", impala: "Strong (visual discrimination)" },
