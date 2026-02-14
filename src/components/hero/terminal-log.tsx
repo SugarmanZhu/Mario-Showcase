@@ -21,7 +21,7 @@ export function TerminalLog() {
       <p className="font-mono text-xs tracking-wider text-muted-foreground uppercase">
         Training Log
       </p>
-      <div className="h-28 max-w-full overflow-x-auto overflow-y-hidden rounded-lg border border-border bg-terminal-bg p-3">
+      <div className="h-36 max-w-full overflow-x-auto overflow-y-hidden rounded-lg border border-border bg-terminal-bg p-3 scrollbar-thin">
         <div className="animate-terminal-scroll w-max">
           {/* Duplicate lines for seamless loop */}
           {[...logLines, ...logLines].map((line, i) => (

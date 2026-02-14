@@ -37,12 +37,12 @@ export function HeroSection() {
 
         {/* Main content: video + telemetry */}
         <ScrollReveal delay={0.1}>
-          <div className="grid gap-6 lg:grid-cols-[3fr_2fr]">
+          <div className="mx-auto grid max-w-xl gap-6 lg:max-w-none lg:grid-cols-[3fr_2fr]">
             {/* Left: Gameplay */}
             <GameplayDisplay />
 
             {/* Right: Telemetry */}
-            <div className="flex min-w-0 flex-col gap-4">
+            <div className="my-auto flex min-w-0 flex-col gap-4">
               <NesController />
               <TelemetryPanel />
               <TerminalLog />
