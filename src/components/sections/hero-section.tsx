@@ -26,9 +26,9 @@ export function HeroSection() {
             </span>
             <h1 className="font-display text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
               AI Learns{" "}
-              <span className="text-mario-red">Super Mario Bros</span>
+              <span className="whitespace-nowrap text-mario-red">Super Mario Bros</span>
             </h1>
-            <p className="mx-auto max-w-xl text-muted-foreground">
+            <p className="mx-auto max-w-xl text-pretty text-muted-foreground">
               A PPO agent with IMPALA CNN trained across 48 parallel environments
               to master Super Mario Bros from raw pixel observations.
             </p>

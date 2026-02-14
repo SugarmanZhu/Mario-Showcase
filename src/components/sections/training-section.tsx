@@ -14,7 +14,7 @@ export function TrainingSection() {
           <SectionHeader
             label="Training Progress"
             title="The Journey"
-            description="From random button mashing to consistent level completion in 12.5 million timesteps."
+            description={<>From random button mashing to consistent level completion in <span className="whitespace-nowrap">12.5 million timesteps.</span></>}
           />
         </ScrollReveal>
 

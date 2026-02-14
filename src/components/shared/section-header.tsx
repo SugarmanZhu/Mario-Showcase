@@ -1,7 +1,7 @@
 interface SectionHeaderProps {
   label: string;
   title: string;
-  description?: string;
+  description?: React.ReactNode;
 }
 
 export function SectionHeader({ label, title, description }: SectionHeaderProps) {
@@ -14,7 +14,7 @@ export function SectionHeader({ label, title, description }: SectionHeaderProps)
         {title}
       </h2>
       {description && (
-        <p className="max-w-2xl text-muted-foreground text-lg">{description}</p>
+        <p className="max-w-2xl text-pretty text-muted-foreground text-lg">{description}</p>
       )}
     </div>
   );
