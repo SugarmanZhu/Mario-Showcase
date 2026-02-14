@@ -39,18 +39,18 @@ export function TrainingSection() {
               Custom Reward Shaping
             </h3>
             <div className="space-y-2.5">
-              <div className="grid grid-cols-3 gap-4 border-b border-border pb-2">
+              <div className="grid grid-cols-2 gap-3 border-b border-border pb-2 sm:grid-cols-3 sm:gap-4">
                 <span className="font-mono text-xs text-muted-foreground uppercase tracking-wider">Signal</span>
                 <span className="font-mono text-xs text-muted-foreground uppercase tracking-wider">Value</span>
-                <span className="font-mono text-xs text-muted-foreground uppercase tracking-wider">Purpose</span>
+                <span className="hidden font-mono text-xs text-muted-foreground uppercase tracking-wider sm:block">Purpose</span>
               </div>
               {rewardShaping.map((r) => (
-                <div key={r.name} className="grid grid-cols-3 gap-4">
+                <div key={r.name} className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4">
                   <span className="font-mono text-sm">{r.name}</span>
                   <span className={`font-mono text-sm ${r.value.startsWith("+") ? "text-mario-green" : "text-mario-red"}`}>
                     {r.value}
                   </span>
-                  <span className="font-mono text-xs text-muted-foreground">{r.description}</span>
+                  <span className="hidden font-mono text-xs text-muted-foreground sm:block">{r.description}</span>
                 </div>
               ))}
             </div>

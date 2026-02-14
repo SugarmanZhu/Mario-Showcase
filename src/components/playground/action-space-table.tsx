@@ -27,16 +27,16 @@ export function ActionSpaceTable() {
         Action Space (12 Actions)
       </h3>
       <div className="space-y-2">
-        <div className="grid grid-cols-[2rem_1fr_auto_1fr] items-center gap-3 border-b border-border pb-2">
+        <div className="grid grid-cols-[1.5rem_1fr_auto] items-center gap-2 border-b border-border pb-2 sm:grid-cols-[2rem_1fr_auto_1fr] sm:gap-3">
           <span className="font-mono text-xs text-muted-foreground">#</span>
           <span className="font-mono text-xs text-muted-foreground uppercase tracking-wider">Action</span>
           <span className="font-mono text-xs text-muted-foreground uppercase tracking-wider">Buttons</span>
-          <span className="font-mono text-xs text-muted-foreground uppercase tracking-wider">Description</span>
+          <span className="hidden font-mono text-xs text-muted-foreground uppercase tracking-wider sm:block">Description</span>
         </div>
         {actions.map((action) => (
           <div
             key={action.id}
-            className="grid grid-cols-[2rem_1fr_auto_1fr] items-center gap-3"
+            className="grid grid-cols-[1.5rem_1fr_auto] items-center gap-2 sm:grid-cols-[2rem_1fr_auto_1fr] sm:gap-3"
           >
             <span className="font-mono text-xs text-muted-foreground">
               {action.id}
@@ -53,7 +53,7 @@ export function ActionSpaceTable() {
                 </Badge>
               )}
             </div>
-            <span className="font-mono text-xs text-muted-foreground">
+            <span className="hidden font-mono text-xs text-muted-foreground sm:block">
               {action.description}
             </span>
           </div>

@@ -17,12 +17,12 @@ const logLines = [
 
 export function TerminalLog() {
   return (
-    <div className="space-y-2">
+    <div className="min-w-0 overflow-hidden space-y-2">
       <p className="font-mono text-xs tracking-wider text-muted-foreground uppercase">
         Training Log
       </p>
-      <div className="h-28 overflow-hidden rounded-lg border border-border bg-terminal-bg p-3">
-        <div className="animate-terminal-scroll">
+      <div className="h-28 max-w-full overflow-x-auto overflow-y-hidden rounded-lg border border-border bg-terminal-bg p-3">
+        <div className="animate-terminal-scroll w-max">
           {/* Duplicate lines for seamless loop */}
           {[...logLines, ...logLines].map((line, i) => (
             <p

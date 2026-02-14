@@ -113,7 +113,7 @@ export function CnnFlowDiagram() {
         IMPALA CNN Architecture
       </p>
 
-      <div className="rounded-2xl border border-border bg-card/50 p-8">
+      <div className="rounded-2xl border border-border bg-card/50 p-4 sm:p-8">
         <div className="flex flex-col items-center">
           {/* Input */}
           <div className="w-full max-w-[220px]">
@@ -127,10 +127,10 @@ export function CnnFlowDiagram() {
           <VerticalConnector />
 
           {/* IMPALA Stages */}
-          <div className="flex w-full max-w-2xl items-center justify-center gap-3 lg:gap-4">
+          <div className="flex w-full max-w-2xl flex-col items-center gap-3 sm:flex-row sm:justify-center lg:gap-4">
             {impalaStages.map((stage, i) => (
-              <div key={stage.name} className="flex items-center gap-3 lg:gap-4">
-                <div className="w-[160px] lg:w-[180px]">
+              <div key={stage.name} className="flex flex-col items-center gap-3 sm:flex-row lg:gap-4">
+                <div className="w-full max-w-[220px] sm:w-[160px] lg:w-[180px]">
                   <DiagramNode
                     label={stage.name}
                     sublabel={`${stage.inputChannels} \u2192 ${stage.outputChannels}ch`}
@@ -138,10 +138,13 @@ export function CnnFlowDiagram() {
                   />
                 </div>
                 {i < impalaStages.length - 1 && (
-                  <svg width="24" height="12" viewBox="0 0 24 12" className="shrink-0 text-border">
-                    <line x1="0" y1="6" x2="18" y2="6" stroke="currentColor" strokeWidth="1" />
-                    <polygon points="16,3 22,6 16,9" fill="currentColor" />
-                  </svg>
+                  <>
+                    <svg width="24" height="12" viewBox="0 0 24 12" className="hidden shrink-0 text-border sm:block">
+                      <line x1="0" y1="6" x2="18" y2="6" stroke="currentColor" strokeWidth="1" />
+                      <polygon points="16,3 22,6 16,9" fill="currentColor" />
+                    </svg>
+                    <div className="h-4 w-px bg-border sm:hidden" />
+                  </>
                 )}
               </div>
             ))}
@@ -161,8 +164,8 @@ export function CnnFlowDiagram() {
           <SplitConnector />
 
           {/* Policy and Value heads */}
-          <div className="flex w-full max-w-md items-start justify-between gap-4 px-2">
-            <div className="w-[180px]">
+          <div className="grid w-full max-w-md grid-cols-2 gap-4 px-2">
+            <div className="min-w-0">
               <DiagramNode
                 label="Policy Head"
                 sublabel={networkHeads.policyHead.layers}
@@ -170,7 +173,7 @@ export function CnnFlowDiagram() {
                 variant="policy"
               />
             </div>
-            <div className="w-[180px]">
+            <div className="min-w-0">
               <DiagramNode
                 label="Value Head"
                 sublabel={networkHeads.valueHead.layers}
