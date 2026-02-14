@@ -49,7 +49,7 @@ export function ArchitectureSection() {
                     <span className="font-mono text-xs text-center text-muted-foreground/70">
                       {row.natureCnn}
                     </span>
-                    <span className="font-mono text-xs text-center text-mario-green">
+                    <span className="font-mono text-xs text-center text-mario-green whitespace-nowrap">
                       {row.impala}
                     </span>
                   </div>
