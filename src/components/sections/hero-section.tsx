@@ -29,8 +29,7 @@ export function HeroSection() {
               <span className="whitespace-nowrap text-mario-red">Super Mario Bros</span>
             </h1>
             <p className="mx-auto max-w-xl text-pretty text-muted-foreground">
-              A PPO agent with IMPALA CNN trained across 48 parallel environments
-              to master Super Mario Bros from raw pixel observations.
+              A PPO agent with <span className="whitespace-nowrap">IMPALA CNN</span> trained across <span className="whitespace-nowrap">48 parallel environments</span> to master <span className="whitespace-nowrap">Super Mario Bros</span> from raw pixel observations.
             </p>
           </div>
         </ScrollReveal>

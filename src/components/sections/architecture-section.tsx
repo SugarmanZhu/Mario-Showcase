@@ -14,7 +14,7 @@ export function ArchitectureSection() {
           <SectionHeader
             label="Architecture"
             title="The Brain"
-            description="IMPALA CNN with residual connections processes 4 stacked RGB frames to output action probabilities and state values."
+            description={<><span className="whitespace-nowrap">IMPALA CNN</span> with residual connections processes <span className="whitespace-nowrap">4 stacked RGB frames</span> to output action probabilities and state values.</>}
           />
         </ScrollReveal>
 

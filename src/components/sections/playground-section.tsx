@@ -13,7 +13,7 @@ export function PlaygroundSection() {
           <SectionHeader
             label="Version Comparison"
             title="The Lab"
-            description="How v2.0 improves on the original with RGB observations, IMPALA CNN, and a richer action space."
+            description={<>How v2.0 improves on the original with RGB observations, <span className="whitespace-nowrap">IMPALA CNN,</span> and a richer <span className="whitespace-nowrap">action space.</span></>}
           />
         </ScrollReveal>
 
